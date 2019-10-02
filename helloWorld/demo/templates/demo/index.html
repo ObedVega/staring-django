@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %} 
+    <title></title>   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'demo/css/estilos.css' %}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ 
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Registro</h1>
+      <form class="form-horizontal" method="GET" id="post-form">{% csrf_token %}
+          <div class="form-group"> 
+              <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="sel1">Nombre</label>                 
+                <input type="text" class="form-control needs-validation" id="nombre" placeholder="Nombre" name="nombre">
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="sel1">Apellido</label>                
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido">
+              </div>
+            </div>     
+            <div class="form-group">
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="sel1">Usuario</label>   
+                <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usuario">
+              </div>                
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <label for="sel1">Seleccionar tipo de usuario</label>
+                  <select class="form-control" id="userSelector">
+                    <option>Seleccionar</option>                      
+                    <option value="Doctor">Doctor</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Paciente">Paciente</option>
+                  </select>
+              </div>
+            </div>   
+          <div class="form-group usersType" id="Doctor"> 
+              <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="sel1">Numero de Cedula Profesional</label>                 
+                <input type="number" class="form-control" id="cedula" placeholder="Cedula" name="cedula">
+              </div>                  
+          </div> 
+          <div class="form-group usersType" id="Secretaria"> 
+              <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="sel1">Consultorio en el que labora</label>                 
+                <input type="text" class="form-control" id="consul" placeholder="consultorio" name="consul">
+              </div>                  
+          </div>  
+          <div class="form-group usersType" id="Paciente"> 
+              <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="sel1">Edad</label>                 
+                <input type="number" class="form-control" id="edad" placeholder="Edad" name="edad">
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <label for="sel1">Sexo</label>
+                  <select class="form-control" id="sel1">
+                    <option>Femenino</option>
+                    <option>Masculino</option>
+                  </select>
+              </div>
+            </div>            
+            <div class="form-group">
+              <div class="col-lg-8 col-sm-12">
+                <label for="sel1">Correo Electronico</label>     
+                <input type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email">
+              </div>
+            </div>          
+             <div class="form-group"> 
+              <div class="col-lg-4 col-sm-12">
+              <label for="sel1">Contraseña</label>                  
+                  <input type="password" class="form-control" id="pwd1" placeholder="Contraseña" name="pwd1">
+              </div>
+              <div class="col-lg-4 col-sm-12">
+              <label for="sel1">Confirmar Contraseña</label>                  
+                  <input type="password" class="form-control" id="pwd2" placeholder="Contraseña" name="pwd2">
+              </div>
+            </div>            
+
+        <div class="form-group">        
+          <div class="col-lg-8 col-sm-12">
+            <button type="submit" class="btn btn-default btn pull-right" id="reg">Registrar</button>        
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p></p>
+</footer>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'demo/js/registro.js' %}"></script>    
+  
+</html>
